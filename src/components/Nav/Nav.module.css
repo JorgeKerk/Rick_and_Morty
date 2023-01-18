@@ -1,0 +1,74 @@
+.divNav {
+    position: fixed;
+    z-index: 1;
+    width: 96%;
+    height: 5em;
+    border-radius: 3px;
+    background-color: rgb(43, 128, 136);
+    padding: 0.1em;
+    display: flex;
+    border: 1px solid white;
+    align-items: center;
+    justify-content: space-between;
+
+    background: linear-gradient(-45deg, orange, #2b8088, rgb(131, 57, 131), #c4d3d4);
+	background-size: 400% 400%;
+	animation: gradient 30s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+.divLinksNav {
+    display: flex;
+}
+
+.link {
+    margin: 0 1em;
+    color: white;
+    text-decoration: none;
+    transition: 0.5s ease-out;
+}
+
+.link:hover {
+    color: orange;
+    text-shadow: 0 0 1em   rgb(18, 226, 18);
+    text-shadow: 0 0 0.4em black;
+}
+
+.link:target{
+    background-color: black;
+}
+
+.divSearch {
+    display: flex;
+    align-items: center;
+}
+
+.buttonNav {
+    font-weight: bold;
+    height: 2.3em;
+    margin: 0;
+    color: black;
+    border: none;
+    padding: 0.1em 1em;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+}
+
+.buttonNav:hover {
+    background-color: rgb(58, 184, 58);
+    color: orange;
+    box-shadow: 0 0 1em white;
+    text-shadow: 0 0 0.4em black;
+}

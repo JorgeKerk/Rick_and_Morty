@@ -1,0 +1,76 @@
+.divFormGral{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divFormContainer {
+    width: 19em;
+    height: 19em;
+    background-color: rgb(43 130 138 / 70%);
+    border: 1px solid white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divInputForm {
+    margin-top: 4em;
+    width: 15em;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.divInputForm p {
+    display: inline;
+}
+
+.labelForm {
+    width: 6em;
+    font-weight: bold;
+    margin-right: 1em;
+    animation: 2s flameLabel infinite ease-in-out;
+}
+
+@keyframes flameLabel {
+    0%{
+        text-shadow: 0 0 0.3em white;
+    }
+    50%{
+        text-shadow: 1 0 0.3em white;
+    }
+    100%{
+        text-shadow: 1 1 0.3em white;
+    }
+}
+
+.inputForm {
+    width: 12em;
+    height: 1.5em;
+}
+
+.buttonForm {
+    margin-top: 4em;
+    width: 6em;
+    cursor: pointer;
+    padding: 0.3em;
+}
+
+.pForm {
+    margin: 3px 0px 0px 0px;
+    padding: 0px;
+    color: rgb(116, 10, 10);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.warning{
+    outline: none;
+}
+
+.warning, .warning:focus, .warning:hover {
+    border-color: red;
+}

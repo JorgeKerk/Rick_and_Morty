@@ -1,0 +1,10 @@
+.App {
+    min-height: 92vh ;
+    height: auto;
+    text-align: center;
+    padding: 25px;
+    background-image: url('./Gifs-del-Universo3.gif');
+    background-size: 100vw 100vh;                     
+    /* background-repeat: no-repeat; */
+    background-position: center center;
+}

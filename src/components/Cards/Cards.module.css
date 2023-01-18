@@ -1,0 +1,19 @@
+.divContCards, .divContCardsMTop {
+    padding: 0.5em 0 2em 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.h1SelCards, .h1SelCardsFav {
+    color: white;
+    text-decoration: underline;
+}
+
+.h1SelCards {
+    margin: 3em 0 0 0;
+}
+
+.h1SelCardsFav{
+    margin: 1em 0 0 0;
+}

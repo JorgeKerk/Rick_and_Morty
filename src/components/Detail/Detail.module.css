@@ -1,0 +1,48 @@
+.divContDetail {
+    margin-top: 7em;
+    height: 70vh;
+    width: 100%;
+    border: 2px solid white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+.divContDetail h1 {
+    padding: 0;
+    font-size: 3em;
+    text-shadow: 0 0 0.1em black;
+}
+
+.divContDetail h1 span{
+    color: orange;
+}
+
+.divContDetail h3 {
+    margin: 1em 0;
+    font-size: 2em;
+    text-shadow: 0 0 0.3em black;
+}
+
+.divContDetail h3 span{
+    color: rgb(0 187 0);
+}
+
+.divContDetail img {
+    border: 0.3em solid rgb(0 160 0);
+    box-shadow: 0 0 1.5em orange;
+    animation: flame 1.5s infinite ease-in-out;
+}
+
+@keyframes flame {
+    0%{
+        box-shadow: 0 0 1.5em orange;
+    }
+    50%{
+        box-shadow: 0 0 2.5em orange;
+    }
+    100%{
+        box-shadow: 0 0 1.5em orange;
+    }
+}
