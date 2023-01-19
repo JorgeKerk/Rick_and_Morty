@@ -10,14 +10,11 @@ export default function Nav({onSearch, onRandom}) {
   return (
     <div className={styles.divNav}>
       <div className={styles.divLinksNav}>
-        {isDet && (<Link className={styles.link} to='/home/favorites'>
-          <h3>{'<-'}</h3>
-        </Link>)}
         {!isHome && (<Link className={styles.link} to='/home'>
           <h3>Home</h3>
         </Link>)}
         
-        {isHome && (<Link className={styles.link} to='/home/favorites'>
+        {(isHome || isDet) && (<Link className={styles.link} to='/home/favorites'>
           <h3>Favorites</h3>
         </Link>)}
 

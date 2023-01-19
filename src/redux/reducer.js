@@ -21,7 +21,7 @@ const reducer = (state=initialState, {type, payload}) => {
             const newArrayFav = [...state.allMyFavorites, payload]
             return {
                 ...state,
-                myFavorites: [...newArrayFav],
+                myFavorites: newArrayFav,
                 allMyFavorites: [...newArrayFav]
             }
         }
@@ -29,7 +29,7 @@ const reducer = (state=initialState, {type, payload}) => {
             const newArrayDel = state.myFavorites.filter(card => card.id !== payload)
             return {
                 ...state,
-                myFavorites: [...newArrayDel],
+                myFavorites: newArrayDel,
                 allMyFavorites: [...newArrayDel]
             }
         case FILTER_CARDS:{

@@ -19,7 +19,7 @@ function Card(props) {
    }
 
    useEffect( ()=> setIsFav(myFavorites.find(card => card.id === id)), [id, isFav, myFavorites])
-   console.log(useLocation().pathname)
+
    return (
       <div className={styles.divCardContainer}>
          {

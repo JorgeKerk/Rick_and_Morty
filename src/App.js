@@ -12,6 +12,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 function App () {
   const [characters, setCharacters] = useState([])
 
+  // Se realiza un acceso ficticio (sin DB) a la página
   const [access, setAccess] = useState(false)
   const username = 'jorgekerk@gmail.com'
   const password = 'Jak1977'
