@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './About.module.css'
 
-export default function About(props) {
+function About( props ) {
   return (
-    <div className={styles.divContAbout}>
+    <div className= { styles.divContAbout } >
         <h1>ACERCA DE MÍ !!!</h1>
         <p>Mi nombre es <strong>JORGE KERK</strong> y soy <i><u>Analista Programador Universitario</u></i> egresado en la Universidad Nacional de la Patagonia San Juan Bosco (U.N.P.S.J.B.) en el año 2006. Actualmente estoy realizando un curso de <u>DESARROLLO WEB FULL STACK</u> en la Universidad Tecnológica Nacional (U.T.N.) y en <strong>SOY HENRY</strong>.</p>
         <br />
@@ -16,3 +16,5 @@ export default function About(props) {
     </div>
   )
 }
+
+export default About

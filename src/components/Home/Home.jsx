@@ -3,14 +3,16 @@ import Cards from '../Cards/Cards'
 import Nav from '../Nav/Nav'
 import { useLocation, Outlet } from 'react-router-dom'
 
-export default function Home({characters, onClose, onSearch, onRandom}) {
+function Home( { characters, onClose, onSearch, onRandom } ) {
   const path = useLocation().pathname
 
   return (
     <>
-      <Nav onSearch={onSearch} onRandom={onRandom} />
-      {path === '/home' && <Cards characters={characters} onClose={onClose} title='CARDS SELECTIONS'/>}
+      <Nav onSearch= { onSearch } onRandom= { onRandom } />
+      { path === '/home' && <Cards characters= { characters } onClose= { onClose } title= 'CARDS SELECTIONS'/> }
       <Outlet />
     </>
   )
 }
+
+export default Home
