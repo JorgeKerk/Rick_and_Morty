@@ -19,7 +19,7 @@ function Card( { id, name, species, gender, image, onClose } ) {
       }
    }
 
-   useEffect( ()=> setIsFav( myFavorites.find( card => card.id === id ) ), [ id, isFav, myFavorites ] )
+   useEffect( ()=> setIsFav( myFavorites.find( card => card.id === id ) ), [ id, myFavorites ] )
 
    return (
       <div className= { styles.divCardContainer } >

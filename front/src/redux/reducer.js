@@ -1,4 +1,4 @@
-import { ADD_FAVORITES, DEL_FAVORITES, FILTER_CARDS, ORDER_CARDS } from "./actions"
+import { GET_FAVORITES, ADD_FAVORITES, DEL_FAVORITES, FILTER_CARDS, ORDER_CARDS } from "./actions"
 
 const initialState = {
     myFavorites: [],
@@ -17,6 +17,13 @@ const orderFav = ( array, payload ) => {
 
 const reducer = ( state = initialState, { type, payload } ) => {
     switch( type ) {
+        case GET_FAVORITES: {
+            return {
+                ...state,
+                myFavorites: payload,
+                allMyFavorites: [ ...payload ]
+            }
+        }
         case ADD_FAVORITES: {
             const newArrayFav = [ ...state.allMyFavorites, payload ]
             return {

@@ -7,6 +7,7 @@ import Favorites from './components/Favorites/Favorites'
 import Form from './components/Form/Form'
 import Home from './components/Home/Home.jsx'
 import { Routes, Route, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 function App () {
   const [ characters, setCharacters ] = useState( [] )
@@ -33,15 +34,15 @@ function App () {
     if( characters.filter( card => card.id === parseInt( idCard ) ).length !== 0 ){
       window.alert( 'La tarjeta con ese ID ya está cargada' )  
     } else {
-      fetch( `https://rickandmortyapi.com/api/character/${ idCard }` )
-        .then( response => response.json() )
-        .then( data  => {
+      axios( `http://localhost:3001/rickandmorty/character/${ idCard }` )
+        .then( ( { data } )  => {
           if( data.name ) {
             setCharacters( oldChars => [ ...oldChars, data ] )
           } else {
-            window.alert( 'No hay personajes con ese ID' )
+            throw Error( 'No hay personajes con ese ID' )
           }
         })
+        .catch( error => window.alert( `Error generado: ${ error.message }` ) )
     }
   }
   
