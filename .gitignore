@@ -26,3 +26,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#files
+/back/src/routes/DEPRECATED_Server.js
