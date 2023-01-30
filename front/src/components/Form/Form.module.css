@@ -57,6 +57,20 @@
     width: 6em;
     cursor: pointer;
     padding: 0.3em;
+
+    font-weight: bold;
+    border: none;
+    height: 2.3em;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+}
+
+
+.buttonForm:hover {
+    background-color: rgb(58, 184, 58);
+    color: orange;
+    box-shadow: 0 0 1em white;
+    text-shadow: 0 0 0.4em black;
 }
 
 .pForm {
