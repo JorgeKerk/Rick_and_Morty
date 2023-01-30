@@ -1,14 +1,22 @@
-REM @echo off
+@echo off
 
 cd back
 If not exist node_modules (
-	npm i	
+	start /wait npm i
+	start npm start
+	cd..
+	cd front
+	If not exist node_modules (
+		start /wait npm i
+	)
+	start npm start
+) else (
+	start npm start
+	cd..
+	cd front
+	If not exist node_modules (
+		start /wait npm i
+	)
+	start npm start
 )
-start npm start
-cd..
-cd front
-If not exist node_modules (
-	npm i	
-)
-start npm start
-exit
+
