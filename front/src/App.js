@@ -14,8 +14,8 @@ function App () {
 
   // Se realiza un acceso ficticio (sin DB) a la página
   const [ access, setAccess ] = useState( false )
-  const username = 'jorgekerk@gmail.com'
-  const password = 'Jak1977'
+  const username = 'admin@mail.com'
+  const password = '123456'
   const navigate = useNavigate()
   const login = userData => {
     if( userData.password === password && userData.username === username ) {
@@ -30,23 +30,35 @@ function App () {
     !access && navigate( '/' )
   }, [ access, navigate ] )
 
-  const onSearch = idCard => {
-    if( characters.filter( card => card.id === parseInt( idCard ) ).length !== 0 ){
-      window.alert( 'La tarjeta con ese ID ya está cargada' )  
-    } else {
-      axios( `http://localhost:3001/rickandmorty/character/${ idCard }` )
-        .then( ( { data } )  => {
-          if( data.name ) {
-            setCharacters( oldChars => [ ...oldChars, data ] )
-          } else {
-            throw Error( 'No hay personajes con ese ID' )
-          }
-        })
-        .catch( error => window.alert( `Error generado: ${ error.message }` ) )
+  const onSearch = async searchCard => { 
+    try{
+      if( !isNaN(searchCard)){
+        if( characters.filter( card => card.id === parseInt( searchCard ) ).length !== 0 ){
+          throw Error( 'La tarjeta con ese ID ya está cargada' )  
+        }
+        const { data } = await axios( `http://localhost:3001/rickandmorty/character/${ searchCard }` )
+        if( data.name ) {
+          setCharacters( oldChars => [ ...oldChars, data ] )
+        } else {
+          throw Error( 'No hay personajes con ese ID' )
+        }
+      } else {
+        const { data } = await axios( `http://localhost:3001/rickandmorty/character/?name=${ searchCard }` )
+        console.log(data)
+        if( data.length ) {
+          setCharacters( [] )
+          data.map( char => setCharacters( oldChars => [ ...oldChars, char ] ) )
+        } else {
+          throw Error( 'No hay personajes con ese nombre' )
+        }
+      }
+    }catch( error ) { 
+      window.alert( `Error generado: ${ error.message }` ) 
     }
   }
   
   const onClose = id => setCharacters( characters.filter( card => card.id !== id ) )
+  const onClear = ()=> setCharacters( [] )
   
   const onRandom = ()=> {
     let nroRand = Math.floor( Math.random() * 827 )
@@ -70,7 +82,8 @@ function App () {
               characters= { characters } 
               onClose= { onClose } 
               onSearch= { onSearch } 
-              onRandom= { onRandom } /> } >
+              onRandom= { onRandom }
+              onClear= { onClear } /> } >
           <Route exact path= '/home/cards' element= { <Cards /> } />
           <Route exact path= '/home/favorites' element= { <Favorites /> } />
           <Route exact path= '/home/about' element= { <About /> } />

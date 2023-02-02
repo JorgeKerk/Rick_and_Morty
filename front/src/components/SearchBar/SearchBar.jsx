@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styles from './searchBar.module.css'
 
-function SearchBar( { onSearch } ) {
+function SearchBar( { onSearch, onClear } ) {
    const [ input, setInput ] = useState( '' )
 
    const handleInput = event => setInput( event.target.value )
@@ -9,6 +9,12 @@ function SearchBar( { onSearch } ) {
       onSearch( input )
       setInput( '' )
    }
+
+   const handleClear = () => {
+      onClear( )
+      setInput( '' )
+   }
+   
    
    return (
       <div className= { styles.divSearch } >
@@ -19,9 +25,15 @@ function SearchBar( { onSearch } ) {
             value= { input } />
 
          <button 
-            className= { styles.buttonSearch } 
+            className= { styles.buttonSearch }
             onClick= { handleClick } >
-               Add Card by ID
+               Add Card
+         </button>
+
+         <button 
+            className= { styles.buttonSearch }
+            onClick= { handleClear } >
+               Clear all
          </button>
       </div>
    )

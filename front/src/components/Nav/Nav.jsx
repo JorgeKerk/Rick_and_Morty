@@ -3,7 +3,7 @@ import styles from './Nav.module.css'
 import SearchBar from '../SearchBar/SearchBar'
 import { Link, useLocation } from 'react-router-dom'
 
-function Nav( { onSearch, onRandom } ) {
+function Nav( { onSearch, onRandom, onClear } ) {
   const isHome = useLocation().pathname === '/home'
   const isDet = useLocation().pathname.includes( '/home/favorites/detail/' )
 
@@ -29,7 +29,7 @@ function Nav( { onSearch, onRandom } ) {
           onClick= { onRandom } >
             Random
         </button>
-        <SearchBar onSearch= { onSearch } />
+        <SearchBar onSearch= { onSearch } onClear= { onClear } />
       </div> ) }
     </div>
   )

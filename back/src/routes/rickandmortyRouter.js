@@ -1,28 +1,40 @@
 
 const { Router } = require( 'express' )
-const getCharById = require('../controllers/getCharById')
-const getCharDetail = require('../controllers/getCharDetail')
+const getCharById = require( '../controllers/getCharById' )
+const getCharDetail = require( '../controllers/getCharDetail' )
+const getCharByName = require( '../controllers/getCharByName' )
 const { getFavorites, addFavorite, delFavorite } = require( '../controllers/favControllers' )
 
 const rickAndMortyRouter = Router()
 
-rickAndMortyRouter.get( '/character/:id', ( req, res )=> {
-    const { id } = req.params
+rickAndMortyRouter.get( '/character/', async ( req, res )=> {
+    const { name } = req.query
 
     try{
-        getCharById( id )
-        .then( char => res.status(200).json( char ) )
+        const character = await getCharByName( name )
+       res.status(200).json( character )
     }catch( err ){
         res.status( 500 ).json( { error: err.message } )
     }
 })
 
-rickAndMortyRouter.get( '/detail/:detailId', ( req, res )=> {
+rickAndMortyRouter.get( '/character/:id', async ( req, res )=> {
+    const { id } = req.params
+
+    try{
+        const character = await getCharById( id )
+        res.status(200).json( character )
+    }catch( err ){
+        res.status( 500 ).json( { error: err.message } )
+    }
+})
+
+rickAndMortyRouter.get( '/detail/:detailId', async ( req, res )=> {
     const { detailId } = req.params
     
     try{
-        getCharDetail( detailId )
-        .then( char => res.status(200).json( char ) )
+        const character = await getCharDetail( detailId )
+        res.status(200).json( character )
     }catch( err ){
         res.status( 500 ).json( { error: err.message } )
     }
@@ -49,5 +61,6 @@ rickAndMortyRouter.delete( '/fav/:id', ( req, res )=> {
         res.status( 400 ).json( { error: err.message } )
     }
 })
+
 
 module.exports = rickAndMortyRouter

@@ -5,7 +5,7 @@ import { useLocation, Outlet } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { getFavorites } from '../../redux/actions'
 
-function Home( { characters, onClose, onSearch, onRandom } ) {
+function Home( { characters, onClose, onSearch, onRandom, onClear } ) {
   const path = useLocation().pathname
   const dispatch = useDispatch()
 
@@ -15,8 +15,20 @@ function Home( { characters, onClose, onSearch, onRandom } ) {
 
   return (
     <>
-      <Nav onSearch= { onSearch } onRandom= { onRandom } />
-      { path === '/home' && <Cards characters= { characters } onClose= { onClose } title= 'CARDS SELECTIONS'/> }
+      <Nav 
+        onSearch= { onSearch } 
+        onRandom= { onRandom }
+        onClear= { onClear } 
+      />
+
+      { path === '/home' && 
+        <Cards 
+          characters= { characters } 
+          onClose= { onClose }
+          title= 'CARDS SELECTIONS'
+        /> 
+      }
+      
       <Outlet />
     </>
   )

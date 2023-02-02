@@ -7,7 +7,7 @@ Creando app de **Rick and Morty**, desde backend se llama con Express a la API R
 <br />
 
 ---
-✔ Para **ejecutar** la aplicación, copie el repositorio en su máquina y ejecute el archivo **boot.bat** (solo Windows). Este archivo cargará los paquetes que sean necesarios si no están instalados. Al instalar los paquetes por primera y única vez, deberá cerrar las ventanas cada vez que termine de instalarse cada paquete. De aquí en adelante, solo se ejecutarán el Back y el Front al mismo tiempo para levantar la aplicacion en su browser predeterminado. 
+✔ Para **ejecutar** la aplicación, copie el repositorio en su máquina y ejecute el archivo **boot.bat** (solo Windows). Este archivo cargará los paquetes que sean necesarios si no están instalados. Al instalar los paquetes por primera y única vez, deberá cerrar las ventanas cada vez que termine de instalarse cada paquete. De aquí en adelante, solo se ejecutarán el Back y el Front al mismo tiempo para levantar la aplicacion en su browser predeterminado. Como la App es una DEMO, el único usuario existente es **admin@mail.com** y el password es **123456**.
 
 💅ACLARACIÓN: Al finalizar, cierre las ventanas de comando abiertas al ejecutar la aplicación. Presione **Ctrl+C** dos veces en cada ventana. 
 
