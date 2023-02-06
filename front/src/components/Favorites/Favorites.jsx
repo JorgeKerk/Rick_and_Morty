@@ -15,7 +15,7 @@ function Favorites( props ) {
   }, [ dispatch ] )
 
   return (
-    <div>
+    <div className= { styles.content }>
       <div className= { styles.divOrdFil } >
         <div className= { styles.divOrder } >
           <h3>Orden</h3>

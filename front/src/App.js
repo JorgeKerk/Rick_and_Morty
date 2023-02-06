@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import './App.css'
+// import './App.css'
 import About from './components/About/About.jsx'
 import Cards from './components/Cards/Cards'
 import Detail from './components/Detail/Detail.jsx'
@@ -8,6 +8,7 @@ import Form from './components/Form/Form'
 import Home from './components/Home/Home.jsx'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Background from './components/Background/Background'
 
 function App () {
   const [ characters, setCharacters ] = useState( [] )
@@ -72,7 +73,7 @@ function App () {
   } 
 
   return (
-    <div className= 'App' style= { { padding: '25px' } } >
+    <Background >
       <Routes>
         <Route exact path= '/' element= { <Form login= { login } /> } />
         <Route 
@@ -91,7 +92,7 @@ function App () {
           <Route exact path= '/home/favorites/detail/:detailId' element= { <Detail /> } />
         </Route>
       </Routes>
-    </div>
+    </Background>
   )
 }
 

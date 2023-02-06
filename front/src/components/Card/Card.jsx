@@ -23,36 +23,20 @@ function Card( { id, name, species, gender, image, onClose } ) {
 
    return (
       <div className= { styles.divCardContainer } >
-         {
-            isFav ? 
-                 <button 
-                     className= { onClose? styles.buttonFav: styles.fix_button } 
-                     onClick= { onClose && handleFavorite } > 
-                        { onClose? '❤️': ' ' } 
-                  </button>
-                : 
-                  <button 
-                     className= { onClose? styles.buttonFav: styles.fix_button } 
-                     onClick={ onClose && handleFavorite } >
-                        { onClose? '🤍': ' '}
-                  </button>
-         }
+         <button className= { styles.buttonFav } onClick= {  handleFavorite } >{ isFav? '❤️' : '🤍' }</button>
 
-         <h3 className= { onClose && styles.numCard } > { `Card N° ${id}` } </h3>
+         <h3 className= { onClose? styles.numCard : styles.nameCardFav } > { `Card N° ${id}` } </h3>
 
-         <button 
-            className= { onClose? styles.buttonClose: styles.fix_button }
-            onClick= { ()=> onClose( id ) } >
-               {onClose? 'X': ' '}
-         </button>
+         { onClose && <button className= { styles.buttonClose } onClick= { ()=> onClose( id ) } >X</button> } 
          
+         <img className= { styles.image } src= { image } alt= {name} />
+
          <Link to= { isPathInFav? `/home/favorites/detail/${id}`: `/home/detail/${id}` } >
             <h2 className= { styles.name } > { name } </h2>
          </Link>
 
          <h2 className= { styles.specie } > { species } </h2>
          <h2 className= { styles.gender } > { gender } </h2>
-         <img className= { styles.image } src= { image } alt= {name} />
       </div>
    )
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styles from './Form.module.css'
 import validation from '../../validation'
-import titleImg from '../../img/Rick_and_Morty_title2.png'
+import titleImg from '../../img/Rick_and_Morty_title.png'
 
 function Form( props ) {
   const [ userData, setUserData ] = useState( { username: '', password: '' } );

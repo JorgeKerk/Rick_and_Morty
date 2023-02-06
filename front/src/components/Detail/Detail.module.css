@@ -2,7 +2,8 @@
     margin-top: 7em;
     height: 70vh;
     width: 100%;
-    border: 2px solid white;
+    border: 3px solid white;
+    border-radius: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -30,7 +31,10 @@
 }
 
 .divContDetail img {
+    top:0;
+    width: 30%;
     border: 0.3em solid rgb(0 160 0);
+    border-radius: 10px;
     box-shadow: 0 0 1.5em orange;
     animation: flame 1.5s infinite ease-in-out;
 }

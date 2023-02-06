@@ -1,3 +1,4 @@
+import styles from './Home.module.css'
 import { useEffect } from 'react'
 import Cards from '../Cards/Cards'
 import Nav from '../Nav/Nav'
@@ -14,7 +15,7 @@ function Home( { characters, onClose, onSearch, onRandom, onClear } ) {
   }, [ dispatch ] )
 
   return (
-    <>
+    <div className= { styles.content }>
       <Nav 
         onSearch= { onSearch } 
         onRandom= { onRandom }
@@ -30,7 +31,7 @@ function Home( { characters, onClose, onSearch, onRandom, onClear } ) {
       }
       
       <Outlet />
-    </>
+    </div>
   )
 }
 

@@ -2,18 +2,24 @@
     padding: 0.5em 0 2em 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    gap: 1em;
 }
 
 .h1SelCards, .h1SelCardsFav {
-    color: white;
+    width: fit-content;
+    font-size: 4vw;
+    font-family: 'Get Schwifty';
+    text-shadow: 0 0 5px black;
+    color: #FFF765;
     text-decoration: underline;
 }
 
 .h1SelCards {
-    margin: 3em 0 0 0;
+    margin: 1.5em 0 0 0;
 }
 
 .h1SelCardsFav{
-    margin: 1em 0 0 0;
+    margin: 0.1em 0 0 0;
 }
